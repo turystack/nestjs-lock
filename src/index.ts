@@ -1,0 +1,5 @@
+export { Lock } from '@/lock.decorator.js'
+export { LockError } from '@/lock.errors.js'
+export { LockModule } from '@/lock.module.js'
+export { LockService } from '@/lock.service.js'
+export type { LockModuleOptions, LockOptions } from '@/lock.types.js'
