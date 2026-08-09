@@ -39,7 +39,8 @@ describe('LockService', () => {
 				expect.any(String),
 				{
 					mode: 'NX',
-					ttl: 10_000,
+					// 10 000 ms in, 10 s out: CacheOptions.ttl is seconds.
+					ttl: 10,
 				},
 			)
 
@@ -61,7 +62,7 @@ describe('LockService', () => {
 				expect.any(String),
 				{
 					mode: 'NX',
-					ttl: 30_000,
+					ttl: 30,
 				},
 			)
 		})

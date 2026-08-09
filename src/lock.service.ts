@@ -61,9 +61,13 @@ export class LockService {
 		const deadline = Date.now() + waitTimeout
 
 		while (Date.now() < deadline) {
+			// `LockOptions.ttl` is milliseconds, like every other duration in that
+			// object; `CacheOptions.ttl` is seconds. Passing one for the other held
+			// the key 1000x too long — a 10 s lock became almost three hours.
+			// Rounded up, so a sub-second ttl never floors to a key with no expiry.
 			const acquired = await this.cacheService.set(lockKey, lockValue, {
 				mode: 'NX',
-				ttl,
+				ttl: Math.ceil(ttl / 1000),
 			})
 
 			if (acquired) {
