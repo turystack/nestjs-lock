@@ -2,7 +2,7 @@
 	"name": "@turystack/nestjs-lock",
 	"description": "Distributed locking for NestJS built on @turystack/nestjs-cache storage adapters.",
 	"private": false,
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"type": "module",
 	"packageManager": "pnpm@10.12.3",
 	"sideEffects": false,
