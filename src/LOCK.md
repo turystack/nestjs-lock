@@ -34,7 +34,7 @@ declare module '@turystack/nestjs-config' {
 })
 class AppModule {}
 
-// Standalone: own storage config (same options as CacheModule.register) —
+// Dedicated storage: own config (same options as CacheModule.register) —
 // opens a dedicated connection; only use when isolation is intentional
 @Module({
   imports: [
